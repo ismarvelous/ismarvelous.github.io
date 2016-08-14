@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Codevelous is an initiative started by Marvelous, a company always working together with other great minds to create state of the art web solutions.">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jeroen Wijdeven">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Cross session personalisation with EPiServer"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Codevelous is an initiative started by Marvelous, a company always working together with other great minds to create state of the art web solutions." />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Codevelo.us"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Cross session personalisation with EPiServer - Codevelo.us</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Codevelo.us</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/feed.xml">
+                            
+                                Feed
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/assets/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Cross session personalisation with EPiServer</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                            Posted by Jeroen Wijdeven on
+                        
+                        2015-11-18
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Episerver/">#Episerver</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>With the standard visitor group criteria cross session personalisation is not standard.<br>However when a user already has visited your website you know him or her from a previous visit and don’t want to discover who he or she<br>is the second time, you only like to know him better. In the real world the customer don’t need to introduce him self the second time.<br>We like to reach the same goal with the visitors on our website.</p>
+<h2 id="Session-based"><a href="#Session-based" class="headerlink" title="Session based"></a>Session based</h2><p>The standard visitor criteria for “Viewed pages” is session based. In this article we are going to make this a cross session<br>experience. We are going to create an experience where we base personlisation based on the last / previous visits.<br>This is farely easy to do in EpiServer by turing the standard criterion into a cross session equivalent.</p>
+<h2 id="Cross-session-criteria"><a href="#Cross-session-criteria" class="headerlink" title="Cross session criteria"></a>Cross session criteria</h2><p>Visitorgroups are based on <a href="http://world.episerver.com/documentation/Items/Developers-Guide/EPiServer-CMS/9/Personalization/Personalization/#CustomVisitorGroupCriteria" target="_blank" rel="external">criterion</a>. To introduce cross session behaviour we created a XCriterionBase class. This class saves an “Anonymous”UserId into a cookie.<br>When the user turns back the next time, we know this user from previous visits, based on this UserId. Each cross session criteria<br>we are going to make relies on this base class XCriterionBase. Let’s explain the code step by step.</p>
+<h3 id="1-Handle-the-start-of-each-session"><a href="#1-Handle-the-start-of-each-session" class="headerlink" title="1. Handle the start of each session"></a>1. Handle the start of each session</h3><p>Handle the start of each session and make sure you get an already existing cookie value, or to create a new one, when it doesn’t<br>already exist. When it doesn’t exist we write a new Guid to it, which will be used for this user, until it expire.<br>note: The GetCookie function can be used for saving other cookie related information as well.</p>
+<pre><code>public override void Subscribe(ICriterionEvents criterionEvents)
+{
+    criterionEvents.StartSession += Handle_StartSession;
+}
+
+private static void Handle_StartSession(object sender, CriterionEventArgs e)
+{
+    //Set the cookie but do not override the existing value.
+    GetCookie(e.HttpContext, AnonymousUserCookieKey, Guid.NewGuid().ToString(), false);
+}
+
+protected static HttpCookie GetCookie(HttpContextBase httpContext, string cookieName, string cookieValue=null, bool overrideExistingValue=false)
+{
+    var cookie = httpContext.Request.Cookies[cookieName];
+
+    if (cookie == null)
+    {
+        cookie = new HttpCookie(cookieName)
+        {
+            Value = cookieValue,
+            Expires = CookieExpires
+        };
+        httpContext.Response.Cookies.Add(cookie);
+        httpContext.Request.Cookies.Add(cookie);
+    }
+    else //update exsiting
+    {
+        if(overrideExistingValue) cookie.Value = cookieValue;
+        cookie.Expires = CookieExpires;
+        httpContext.Response.Cookies.Add(cookie);
+        httpContext.Request.Cookies.Set(cookie);
+    }
+
+    return cookie;
+}
+</code></pre><h3 id="2-Identify-the-user"><a href="#2-Identify-the-user" class="headerlink" title="2. Identify the user"></a>2. Identify the user</h3><p>By using the AnonymousUserId property you can get all user information any time you want.</p>
+<pre><code>protected Guid AnonymousUserId
+{
+    get
+    {
+        return Guid.Parse(GetCookie(new HttpContextWrapper(HttpContext.Current), AnonymousUserCookieKey, Guid.NewGuid().ToString(), false).Value);
+    }
+}
+</code></pre><h3 id="3-Unsubscribe"><a href="#3-Unsubscribe" class="headerlink" title="3. Unsubscribe"></a>3. Unsubscribe</h3><p>Don’t forget to unsubscribe the session start.</p>
+<pre><code>public override void Unsubscribe(ICriterionEvents criterionEvents)
+{
+    criterionEvents.StartSession -= Handle_StartSession;
+}
+</code></pre><h2 id="Data-repository"><a href="#Data-repository" class="headerlink" title="Data repository."></a>Data repository.</h2><p>Data for the “Anonymous”User is saved into a database using a repository. This allows you to save this stuff into a custom<br>“Experience” database or just use the database you already use for the EPiServer CMS, it’s up to you.</p>
+<h3 id="1-The-repository"><a href="#1-The-repository" class="headerlink" title="1. The repository"></a>1. The repository</h3><p>The repository is based on an interface. We can create custom implementations based on it.</p>
+<pre><code>public interface IXCriterionRepository
+{
+    XCriterionModel GetXCriterion(Guid userId, string key);
+    void UpdateXCriterion(XCriterionModel criterion);
+    void Clean(int expirationDays);
+}
+</code></pre><h3 id="2-Register-the-implementation"><a href="#2-Register-the-implementation" class="headerlink" title="2. Register the implementation"></a>2. Register the implementation</h3><p>Be sure you register the implementation of you repository at startup. This can be done with an attribute or by adding it to the<br>container at startup in a InitializationModule.</p>
+<pre><code>x.For&lt;IXCriterionRepository&gt;().Use&lt;XCriterionRepository&gt;();
+</code></pre><h3 id="3-Implement-the-repository"><a href="#3-Implement-the-repository" class="headerlink" title="3. Implement the repository"></a>3. Implement the repository</h3><p>Because the DDS in EPiServer can be a little slow we use<br><a href="https://github.com/jonwagner/Insight.Database" target="_blank" rel="external">Insight.Database</a> for super fast database access / query execution.<br>More important is it also allows you to execute sql queries async with ease. We like to have this because<br>we are going to update the table during each request, but don’t want to wait for it, see the UpdateXCriterion function for an example.<br>The XCriterionModel.Data property contains JSON, so you can save basically anything you want.</p>
+<pre><code>public class XCriterionRepository : BaseRepository, IXCriterionRepository
+{
+    public XCriterionModel GetXCriterion(Guid userId, string key)
+    {
+        XCriterionModel result = null;
+        var results = Connection.QuerySql&lt;XCriterionModel&gt;(
+            &quot;SELECT * FROM XCriterionModel WHERE AnonymousUserId = @AnonymousUserId AND SessionKey = @SessionKey&quot;,
+            new { AnonymousUserId = userId, SessionKey = key });
+
+        if (!results.Any())
+        {
+            var newObj = new XCriterionModel()
+                {
+                    AnonymousUserId = userId,
+                    SessionKey = key,
+                    Data = string.Empty,
+                    Modified = DateTime.Now
+                };
+
+            try
+            {
+
+                Connection.ExecuteSql(
+                    &quot;INSERT INTO XCriterionModel SELECT AnonymousUserId, SessionKey, Data, Modified FROM @Criterion&quot;,
+                    new {Criterion = new List&lt;XCriterionModel&gt; {newObj}});
+                result = newObj;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+                throw ex;
+            }
+        }
+        else
+        {
+            result = results.FirstOrDefault();
+        }
+
+        return result;
+    }
+
+    public void UpdateXCriterion(XCriterionModel criterion)
+    {
+        Connection.ExecuteSqlAsync(&quot;UPDATE XCriterionModel SET Data = @Data, Modified = @Modified WHERE AnonymousUserId = @AnonymousUserId AND SessionKey = @SessionKey&quot;, criterion);
+    }
+
+    public void Clean(int expirationDays)
+    {
+
+        Connection.ExecuteSql(
+            &quot;DELETE FROM XCriterionModel WHERE Modified &lt; DATEADD(DAY, DATEDIFF(DAY, 0, GETDATE()), @NumberOfDays)&quot;,
+            new {NumberOfDays = 0 - expirationDays});
+    }
+}
+</code></pre><h3 id="4-Ensure-the-database"><a href="#4-Ensure-the-database" class="headerlink" title="4. Ensure the database"></a>4. Ensure the database</h3><p>Make sure the database is setup correctly. The EnsureDatabase function is executed during initiaizing the repository and is required<br>by the base repository we are using.</p>
+<pre><code>public override void EnsureDatabase()
+{
+    Connection.ExecuteSql(
+        &quot;IF NOT exists(SELECT 1 FROM sys.Tables WHERE Name = N&apos;XCriterionModel&apos; AND Type = N&apos;U&apos;)&quot; +
+        &quot;BEGIN&quot; +
+        &quot;   CREATE TYPE XCriterionModelTable AS TABLE (AnonymousUserId [uniqueidentifier], SessionKey [nvarchar](50), Data [nvarchar](max), Modified [date]); &quot; +
+        &quot;   CREATE TABLE XCriterionModel (&quot; +
+        &quot;    AnonymousUserId uniqueidentifier,&quot; +
+        &quot;    SessionKey nvarchar(50),&quot; +
+        &quot;    Data nvarchar(max),&quot; +
+        &quot;    Modified date&quot; +
+        &quot;    primary key (AnonymousUserId, SessionKey)&quot; +
+        &quot;  );&quot; +
+        &quot;END&quot;);
+}
+</code></pre><h2 id="The-final-implementation"><a href="#The-final-implementation" class="headerlink" title="The final implementation"></a>The final implementation</h2><p>Finally you can implement your custom visitor group criterion. This criterion is using the IXCriterionRepository to save the data to<br>where ever you want and relies on the XCriterionBase class to identify the user. In the example code I show you an example of the cross session<br>implementation we made for the ViewedPages criterion.</p>
+<h3 id="1-The-sessionkey"><a href="#1-The-sessionkey" class="headerlink" title="1. The sessionkey"></a>1. The sessionkey</h3><p>Each implementation needs a unique sessionkey. Together with the AnonymousUserId this makes unique combination in the database.</p>
+<pre><code>protected override string SessionKey
+{
+    get
+    {
+        return &quot;EPi:ViewedPagesX&quot;;
+    }
+}
+</code></pre><h3 id="2-Add-viewed-pages"><a href="#2-Add-viewed-pages" class="headerlink" title="2. Add viewed pages"></a>2. Add viewed pages</h3><p>Register the events to handle the start of each session. We initialize the VisitedPage event.<br>Each time a page is visited this event occurs and we add the viewedpage to a hashset in the session<br>and notice the repository to update the database with the new situation as well.</p>
+<pre><code>public override void Subscribe(ICriterionEvents criterionEvents)
+{
+    base.Subscribe(criterionEvents);
+    criterionEvents.VisitedPage += VisitedPage;
+}
+
+private void VisitedPage(object sender, CriterionEventArgs e)
+{
+    var pageLink = e.GetPageLink();
+    if (PageReference.IsNullOrEmpty(pageLink))
+        return;
+
+    AddViewedPage(e.HttpContext, pageLink);
+}
+
+private void AddViewedPage(HttpContextBase httpContext, PageReference pageLink)
+{
+    var hashSet = GetViewedPages(httpContext);
+    if (hashSet == null)
+    {
+        hashSet = new HashSet&lt;PageReference&gt;();
+        if (httpContext.Session != null)
+            httpContext.Session[SessionKey] = hashSet;
+    }
+
+    if (!hashSet.Contains(pageLink))
+        hashSet.Add(pageLink); //add to current set when not exists
+
+    //always make sure you update the database.
+    Repository.UpdateXCriterion(
+        new XCriterionModel() {
+            AnonymousUserId = AnonymousUserId,
+            SessionKey = SessionKey,
+            Data = JsonConvert.SerializeObject(hashSet), //save as json
+            Modified = DateTime.Now
+        });
+}
+</code></pre><h3 id="3-Get-previously-viewed-pages"><a href="#3-Get-previously-viewed-pages" class="headerlink" title="3. Get previously viewed pages"></a>3. Get previously viewed pages</h3><p>To be sure we don’t need the database for every request we get all viewed pages from the repository during the first request<br>and put everything into the session. After this the implementation works more or less the same as you are used to with the standard<br>ViewedPages criterion, with the exception that we update the database after every request for cross session purpose (see previous paragraph).</p>
+<pre><code>private HashSet&lt;PageReference&gt; GetViewedPages(HttpContextBase httpContext)
+{
+    if (httpContext.Session == null)
+        return null;
+
+    var hashSet = httpContext.Session[SessionKey] as HashSet&lt;PageReference&gt;;
+    if (hashSet == null)
+    {
+        var criterion = Repository.GetXCriterion(AnonymousUserId, SessionKey);
+
+        if (criterion.Data.ValidateJSON())
+        {
+            hashSet = JsonConvert.DeserializeObject&lt;HashSet&lt;PageReference&gt;&gt;(criterion.Data);
+            httpContext.Session[SessionKey] = hashSet;
+        }
+    }
+
+    return hashSet;
+}
+</code></pre><h3 id="4-Unsubscribe"><a href="#4-Unsubscribe" class="headerlink" title="4. Unsubscribe"></a>4. Unsubscribe</h3><p>And finally do’nt forget to unsubscribe.</p>
+<pre><code>public override void Unsubscribe(ICriterionEvents criterionEvents)
+{
+    base.Unsubscribe(criterionEvents);
+    criterionEvents.VisitedPage -= VisitedPage;
+}
+</code></pre><h3 id="5-Clean-up-entities"><a href="#5-Clean-up-entities" class="headerlink" title="5. Clean up entities"></a>5. Clean up entities</h3><p>Because you have a cookie expiration users can get new AnonymousUserIds from time to time. It’s also likely you like to cleanup<br>database entities for several other reasons. Don’t forget to create an EpiServer job which can execute the repository’s cleanup<br>function from time to time. The function removes every entity not modified since a particular date. Ofcourse there are also many reasons<br>you want to keep the data for big data analysis, but that’s up to you.</p>
+<pre><code>Repository.Clean(90) //when you like to delete everything that&apos;s not modified for 90 days.
+</code></pre><h2 id="Finally"><a href="#Finally" class="headerlink" title="Finally"></a>Finally</h2><p>Again EpiServer has the right tools to extend the system in a way you like. This article hopefully helps you out by creating<br>your own cross session visitor group criterion. I also put together <a href="https://gist.github.com/Chuhukon/7a076f7f4b049f23957d" target="_blank" rel="external">all code in one big gist</a>. Feel free to<br>use it the way you want and create some beautiful customer experiences.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                        <li>
+                            <a href="http://twitter.com/chuhukon" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/ismarvelous" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted"><a href="http://ismarvelous.nl">Marvelous</a>, De Ideeënfabriek, Liessentstraat 9a, 5405AH Uden </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'codevelous';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Codevelous is an initiative started by Marvelous, a company always working together with other great minds to create state of the art web solutions.">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jeroen Wijdeven">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Continuous Integration using Appveyor with the EPiServer Digital Experience Cloud"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Codevelous is an initiative started by Marvelous, a company always working together with other great minds to create state of the art web solutions." />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Codevelo.us"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Continuous Integration using Appveyor with the EPiServer Digital Experience Cloud - Codevelo.us</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Codevelo.us</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/feed.xml">
+                            
+                                Feed
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/assets/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Continuous Integration using Appveyor with the EPiServer Digital Experience Cloud</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                            Posted by Jeroen Wijdeven on
+                        
+                        2015-09-27
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Episerver/">#Episerver</a> <a href="/tags/Azure/">#Azure</a> <a href="/tags/Appveyor/">#Appveyor</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p><em>note: add some small changes on 17-11-2015 based on some new insights on the latest version of DXC.</em>  </p>
+<p>Did you already hear about Appveyor? If the answer is no, check out for example the post <a href="http://www.hanselman.com/blog/AppVeyorAGoodContinuousIntegrationSystemIsAJoyToBehold.aspx" target="_blank" rel="external">A good continuous integration system is a joy to behold</a> by Scott Hanselman.</p>
+<p>So now you do know how cool it is, let’s start using it for your EPiServer project. The EPiServer Digital Experience Cloud is running on Azure, so everything you read here does work for your Azure setup as well.</p>
+<h2 id="Attaching-your-source…"><a href="#Attaching-your-source…" class="headerlink" title="Attaching your source…"></a>Attaching your source…</h2><p>Attaching your source to Appveyor is really easy.  </p>
+<ul>
+<li>Go to your Appveyor portal page</li>
+<li>Select New project</li>
+<li>Select the source control system you use.<ul>
+<li>We use Visual Studio Online</li>
+<li>You see all vs online instances you have access to</li>
+<li>Select the branch folder you like to have CI for.</li>
+</ul>
+</li>
+<li>A Appveyor project is created for you, that’s all!</li>
+<li>Now you are in the settings area of Appveyor. All items you can set here, can be downloaded / saved as a yaml file (<em>Export YAML</em>)</li>
+</ul>
+<h2 id="Create-the-yaml-file"><a href="#Create-the-yaml-file" class="headerlink" title="Create the yaml file"></a>Create the yaml file</h2><p>The beauty of Appveyor is that most things are working out-of-the box, without too much setup. For example you can setup the CI environment by using an easy to read Yaml file, or just create the Yaml file automatically within Appveyor.<br>If the Yaml file is not in your project, the build server relies on the settings you did in the “admin” portal. Exporting the default configuration to a Yaml file is very easy. Go to your project settings page and hit the “Export Yaml” menu item en create the Yaml file from there.<br>Add the file to the root of your code repository. Our Yaml file looks like this:</p>
+<pre><code>version: 0.1.{build}
+configuration: Release
+assembly_info:
+  patch: true
+  file: &apos;**\AssemblyInfo.*&apos;
+  assembly_version: &apos;{version}&apos;
+  assembly_file_version: &apos;{version}&apos;
+  assembly_informational_version: &apos;{version}&apos;
+nuget:
+  account_feed: true
+  project_feed: true
+  disable_publish_on_pr: true
+before_build:
+- nuget restore website\solutionname.sln -source http://nuget.episerver.com/feed/packages.svc/ -source https://www.nuget.org/api/v2/
+build:
+  publish_wap_xcopy: true
+  verbosity: minimal
+deploy:
+- provider: WebDeploy
+  server: https://--- website name ---.scm.azurewebsites.net:443/msdeploy.axd?site=--- website name ---
+  website: --- website name ---
+  username: --- username ---
+  password:
+    secure: --- your secure key here ---
+</code></pre><p>Every setting in this Yaml file can be managed from the Appveyor portal as well. But in the end I think it’s easy to have this file<br>versioned in your project. Let’s describe our setup.</p>
+<h3 id="Versioning"><a href="#Versioning" class="headerlink" title="Versioning"></a>Versioning</h3><p>Versioning can be handled by the Appveyor build server. It automatically sets the version numbers of your projects. In our example that’s<br>a prefixed version number (0.1.) combined with the buildnumber ({build}).</p>
+<h3 id="Episerver-nuget-settings"><a href="#Episerver-nuget-settings" class="headerlink" title="Episerver nuget settings"></a>Episerver nuget settings</h3><p>Appveyor does restore nuget packages automatically, but when using EpiServer we rely heavily on EPiServers nuget package feed.<br>Therefor you can execute a pre-build command (see: _before_build_) and add the sources you rely on there. Appveyor can also serve<br>as your own private nuget server. If you build nuget packages in your solution these are automatically added to the private nuget feed (based on the .nuspec files).</p>
+<h3 id="Web-deploy"><a href="#Web-deploy" class="headerlink" title="Web deploy"></a>Web deploy</h3><p>After each commit (or tfs check-in) we like to deploy our stuff to our dev test environment of course. This again is really easy to setup.<br>See the <em>deploy</em> part of the YAML file, or go to the <em>deployment</em> settings area in Appveyor. You need to download your publish profile from the Azure portal<br>or in case you use the EPiserver Digital Cloud Experience platform, you can get this from your support engineer.  </p>
+<p>The file is an xml file. All data needed to setup Appveyor correctly for Web deploy is in this file:  </p>
+<ul>
+<li><strong>Server</strong>: https:// + &lt; publishProfile publishUrl > + msdeploy.axd?site= + \&lt; publishProfile msdeploySite >  </li>
+<li><strong>Website name</strong>:  &lt; publishProfile msdeploySite >  </li>
+<li><strong>Username</strong>: &lt; publishProfile userName >  </li>
+<li><strong>Password</strong>: &lt; publishProfile userPWD >  </li>
+</ul>
+<h3 id="Build-a-zip-package-and-deploy"><a href="#Build-a-zip-package-and-deploy" class="headerlink" title="Build a zip package and deploy."></a>Build a zip package and deploy.</h3><p>I don’t like to do CI for our live environment. And because we like to test the “GO Live procedure” we don’t do this for our<br>acceptance environment either. We like to have a person who push the red button. When using DXC the EPiServer support team will push this button. Appveyor to the rescue; it can create a zip package for<br>xcopy deployments and save it as an artifact (_publish_wap_xcopy: true_ or go the the <em>Build</em> tab and set <em>Package Web Applications for XCopy deployment</em>).<br>If you think a specific version is stable enough, just download the zip file and send it together to the administrator who has to deploy the package.<br>Appveyor can also do the deployments for you, but when your administrator don’t have access to you Appveyor portal WAWSDeploy can help you out.</p>
+<p>For the administrator (and also for the developer) WAWSDeploy is an easy to use tool to help you with the deployment of the zip file.<br>You can install WAWSDeploy via <a href="https://chocolatey.org/packages/WAWSDeploy" target="_blank" rel="external">Chocolatey</a> and read more about it at <a href="http://blog.davidebbo.com/2014/03/WAWSDeploy.html" target="_blank" rel="external">David Ebbo’s blogpost</a>.<br>This is especially handy when you own the environment, in case of the DXC a lot is handled for you by the support team.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Appveyor works really great within an EPiServer DTAP street. This is mainly because the great code first approuch and the ease of use of Appveyor. The Digital Cloud Experience Platform<br>makes it even more easier, because we don’t have to do transformations for services busses, connectionstrings etc and even the deployment to staging and prod. The EPiServer support team will manage this for you.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                        <li>
+                            <a href="http://twitter.com/chuhukon" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/ismarvelous" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted"><a href="http://ismarvelous.nl">Marvelous</a>, De Ideeënfabriek, Liessentstraat 9a, 5405AH Uden </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'codevelous';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
