@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Typed models generator for Umbraco document types"/>
+        <meta property="og:title" content="Sneak peek; What bigdata can do for your CMS"/>
     
 
     <!--Open Graph Description-->
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>Typed models generator for Umbraco document types - Codevelo.us</title>
+    <title>Sneak peek; What bigdata can do for your CMS - Codevelo.us</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -135,14 +135,14 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Typed models generator for Umbraco document types</h1>
+                    <h1>Sneak peek; What bigdata can do for your CMS</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
                             Posted by Jeroen Wijdeven on
                         
-                        2015-06-09
+                        2017-05-09
                     </span>
                 </div>
             </div>
@@ -162,7 +162,7 @@
                         
 
 
-<a href="/tags/Umbraco/">#Umbraco</a> <a href="/tags/Muffin/">#Muffin</a>
+<a href="/tags/Episerver/">#Episerver</a> <a href="/tags/Umbraco/">#Umbraco</a> <a href="/tags/Dimml/">#Dimml</a> <a href="/tags/Einstakur/">#Einstakur</a>
 
 
                     
@@ -177,8 +177,14 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>The latest build of <a href="http://bitbucket.org/ismarvelous/muffin" target="_blank" rel="external">muffin</a> has support for automatic typed model generation using T4 templates. I let you see how; in this youtube video.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/TZjBbqMyWes" frameborder="0" allowfullscreen></iframe></div>
+                <p>The combination of big data / analytics and all the nice things that we can do with it in our CMS systems has keeping me busy the last 2 years. The result is our own CMS independend bigdata platform where we can combine analytics, personalisation, testing and connecting other datasources like (CRM, ERP etc.) In this blog post I want you to give a little sneak peek of what we did.</p>
+<p>Let start with some explanations of the techniques we use</p>
+<h2 id="Dimml-the-data-sience-language"><a href="#Dimml-the-data-sience-language" class="headerlink" title="Dimml the data sience language"></a>Dimml the data sience language</h2><p>Dimml is a declaritive machine language. That’s a mouth full of technical words. We call it our data washing machine. It collects all kind of data from different sources and does make an easy understandable data source from all of that. That “washed” data is used in our .net applications. It’s not only analytics data that matters, it’s about data which you can collect from other systems as well. Filter and combine it, and to make usefull information of it. The beauty of dimml is; it is realtime, you don’t have to wait a day or 2 before all data is processed and it can connect a lot of sources. An example; collect live visitor data of your website, connect it with  data of your CRM, your email campaign or even the visitors who visted you “offline” store.</p>
+<h2 id="Einstakur-codename"><a href="#Einstakur-codename" class="headerlink" title="Einstakur (codename)"></a>Einstakur (codename)</h2><p>What?? Einstakur is that some weird iceland word!? Yes it is! It’s because we didn’t find a word to describe what we are working. Iceland is probably one of the smallest languages in the world, so not that much of native speakers can blame us for using the word the wrong way ;-) .. So what’s Einstakur in this case? It’s a code name for our .net library which we created on top of the mongo db. Einstakur is CMS / application independend and can be used in Umbraco, Episerver our even your (mobile) .net applications. You can not only use it for quering the visitor / analytics data, but also to push log entries or server performance statistics to dimml. Imagine what you can do when you connect those data pieces.</p>
+<h2 id="Visitor-groups-and-Pipeline"><a href="#Visitor-groups-and-Pipeline" class="headerlink" title="Visitor groups and Pipeline"></a>Visitor groups and Pipeline</h2><p>Episerver has already something inplace to personalize the experience of your site visitors. It’s called visitor groups. The standard available Visitor groups are most of the time session based. In another article we already talked about how to create cross session based criteria. Our new solution goes a step further but does use the same techniques in Episerver. The Episerver platform has some nice interfaces on top of which you can easily create your own visitor group criteria.<br>Umbraco on the other hand is the editors most friendly CMS system. It does focus on managing content (duh! it’s a content management system) and does a great job there. Umbraco in it’s core doesn’t have something like visitor groups but there are plenty of packages who do. One of them is called Pipeline, a mini CRM inside Umbraco. Pipeline is created by our friends from GrowCreate and we are closely working together with them to create a superduper of a personalisation experience for Umbraco as well. In pipeline the “groups” are called “segments”.</p>
+<h2 id="Connecting-the-pieces"><a href="#Connecting-the-pieces" class="headerlink" title="Connecting the pieces"></a>Connecting the pieces</h2><p>Imagine that you not only track visitor analytics data, but you can connect and combine other sources as well to know your customer even better. It can be scary and you have to think more than twice about privacy. Not only what is accepted by law, but also what do you think is acceptable (but lets keep that for another big blog post). In the image below you see that visitor tracking is just one of the data sources. Via Dimml we can collect all page visits and javascript events (mouseovers, clicks, scrolls etc) of a user and store them into one big mongo db. Einstakur on the other hand is our first step of an api to use the data. It’s a query api which you can use to create superduper nice visitor group criteria (Episerver) or segments (Pipeline). We also use it to have integrated analytics in the CMS. For example live analytics on page and or visitor level.</p>
+<p><img src="/assets/posts/20170509-1.png" alt="Connecting the pieces"></p>
+<h2 id="I-want-this"><a href="#I-want-this" class="headerlink" title="I want this!"></a>I want this!</h2><p>Oh yeah, you like this? Nice! please contact us at: <a href="&quot;mailto:mail@marvelous.nl&quot;">Marvelous.nl</a>. We really like to work together and give you the oppertunity to play around with it.</p>
 
 
                 
