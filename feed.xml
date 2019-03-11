@@ -4,9 +4,9 @@
   <subtitle>Beautiful code and other things we like</subtitle>
   <link href="/feed.xml" rel="self"/>
   
-  <link href="http://ismarvelous.nl/"/>
+  <link href="http://codevelo.us/"/>
   <updated>2017-05-09T15:30:56.980Z</updated>
-  <id>http://ismarvelous.nl/</id>
+  <id>http://codevelo.us/</id>
   
   <author>
     <name>Jeroen Wijdeven</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Sneak peek; What bigdata can do for your CMS</title>
-    <link href="http://ismarvelous.nl/posts/Sneak%20peek%20what%20bigdata%20can%20do%20for%20your%20CMS/"/>
-    <id>http://ismarvelous.nl/posts/Sneak peek what bigdata can do for your CMS/</id>
+    <link href="http://codevelo.us/posts/Sneak%20peek%20what%20bigdata%20can%20do%20for%20your%20CMS/"/>
+    <id>http://codevelo.us/posts/Sneak peek what bigdata can do for your CMS/</id>
     <published>2017-05-08T22:00:00.000Z</published>
     <updated>2017-05-09T15:30:56.980Z</updated>
     
@@ -49,20 +49,20 @@ client.For&lt;Visitor&gt;().InRange(DateTime.Now.AddYears(-1), DateTime.Now).All
     </summary>
     
     
-      <category term="Episerver" scheme="http://ismarvelous.nl/tags/Episerver/"/>
+      <category term="Episerver" scheme="http://codevelo.us/tags/Episerver/"/>
     
-      <category term="Umbraco" scheme="http://ismarvelous.nl/tags/Umbraco/"/>
+      <category term="Umbraco" scheme="http://codevelo.us/tags/Umbraco/"/>
     
-      <category term="Dimml" scheme="http://ismarvelous.nl/tags/Dimml/"/>
+      <category term="Dimml" scheme="http://codevelo.us/tags/Dimml/"/>
     
-      <category term="Einstakur" scheme="http://ismarvelous.nl/tags/Einstakur/"/>
+      <category term="Einstakur" scheme="http://codevelo.us/tags/Einstakur/"/>
     
   </entry>
   
   <entry>
     <title>Cross session personalisation with EPiServer</title>
-    <link href="http://ismarvelous.nl/posts/cross%20session%20personalisation%20with%20episerver/"/>
-    <id>http://ismarvelous.nl/posts/cross session personalisation with episerver/</id>
+    <link href="http://codevelo.us/posts/cross%20session%20personalisation%20with%20episerver/"/>
+    <id>http://codevelo.us/posts/cross session personalisation with episerver/</id>
     <published>2015-11-17T23:00:00.000Z</published>
     <updated>2016-08-14T11:30:35.574Z</updated>
     
@@ -284,14 +284,14 @@ private void AddViewedPage(HttpContextBase httpContext, PageReference pageLink)
     </summary>
     
     
-      <category term="Episerver" scheme="http://ismarvelous.nl/tags/Episerver/"/>
+      <category term="Episerver" scheme="http://codevelo.us/tags/Episerver/"/>
     
   </entry>
   
   <entry>
     <title>Continuous Integration using Appveyor with the EPiServer Digital Experience Cloud</title>
-    <link href="http://ismarvelous.nl/posts/episerver%20continous%20integration%20using%20appveyor/"/>
-    <id>http://ismarvelous.nl/posts/episerver continous integration using appveyor/</id>
+    <link href="http://codevelo.us/posts/episerver%20continous%20integration%20using%20appveyor/"/>
+    <id>http://codevelo.us/posts/episerver continous integration using appveyor/</id>
     <published>2015-09-26T22:00:00.000Z</published>
     <updated>2016-08-14T11:31:22.521Z</updated>
     
@@ -360,18 +360,18 @@ deploy:
     </summary>
     
     
-      <category term="Episerver" scheme="http://ismarvelous.nl/tags/Episerver/"/>
+      <category term="Episerver" scheme="http://codevelo.us/tags/Episerver/"/>
     
-      <category term="Azure" scheme="http://ismarvelous.nl/tags/Azure/"/>
+      <category term="Azure" scheme="http://codevelo.us/tags/Azure/"/>
     
-      <category term="Appveyor" scheme="http://ismarvelous.nl/tags/Appveyor/"/>
+      <category term="Appveyor" scheme="http://codevelo.us/tags/Appveyor/"/>
     
   </entry>
   
   <entry>
     <title>Upload files with Xforms</title>
-    <link href="http://ismarvelous.nl/posts/upload%20files%20with%20xforms/"/>
-    <id>http://ismarvelous.nl/posts/upload files with xforms/</id>
+    <link href="http://codevelo.us/posts/upload%20files%20with%20xforms/"/>
+    <id>http://codevelo.us/posts/upload files with xforms/</id>
     <published>2015-08-12T22:00:00.000Z</published>
     <updated>2016-08-14T11:30:35.604Z</updated>
     
@@ -443,14 +443,14 @@ public virtual ActionResult Success(BasePageData currentPage, XFormPostedData xF
     </summary>
     
     
-      <category term="Episerver" scheme="http://ismarvelous.nl/tags/Episerver/"/>
+      <category term="Episerver" scheme="http://codevelo.us/tags/Episerver/"/>
     
   </entry>
   
   <entry>
     <title>Typed models generator for Umbraco document types</title>
-    <link href="http://ismarvelous.nl/posts/typed%20models%20generator%20for%20umbraco%20document%20types/"/>
-    <id>http://ismarvelous.nl/posts/typed models generator for umbraco document types/</id>
+    <link href="http://codevelo.us/posts/typed%20models%20generator%20for%20umbraco%20document%20types/"/>
+    <id>http://codevelo.us/posts/typed models generator for umbraco document types/</id>
     <published>2015-06-08T22:00:00.000Z</published>
     <updated>2016-08-08T18:28:24.163Z</updated>
     
@@ -465,16 +465,16 @@ public virtual ActionResult Success(BasePageData currentPage, XFormPostedData xF
     </summary>
     
     
-      <category term="Umbraco" scheme="http://ismarvelous.nl/tags/Umbraco/"/>
+      <category term="Umbraco" scheme="http://codevelo.us/tags/Umbraco/"/>
     
-      <category term="Muffin" scheme="http://ismarvelous.nl/tags/Muffin/"/>
+      <category term="Muffin" scheme="http://codevelo.us/tags/Muffin/"/>
     
   </entry>
   
   <entry>
     <title>The Umbraco Foundation - A dynamic journey of concerns</title>
-    <link href="http://ismarvelous.nl/posts/the%20Umbraco%20Foundation%20-%20a%20dynamic%20journey%20of%20concerns/"/>
-    <id>http://ismarvelous.nl/posts/the Umbraco Foundation - a dynamic journey of concerns/</id>
+    <link href="http://codevelo.us/posts/the%20Umbraco%20Foundation%20-%20a%20dynamic%20journey%20of%20concerns/"/>
+    <id>http://codevelo.us/posts/the Umbraco Foundation - a dynamic journey of concerns/</id>
     <published>2014-03-24T23:00:00.000Z</published>
     <updated>2016-08-08T18:42:44.932Z</updated>
     
@@ -536,18 +536,18 @@ public virtual ActionResult Success(BasePageData currentPage, XFormPostedData xF
     </summary>
     
     
-      <category term="Umbraco" scheme="http://ismarvelous.nl/tags/Umbraco/"/>
+      <category term="Umbraco" scheme="http://codevelo.us/tags/Umbraco/"/>
     
-      <category term="Muffin" scheme="http://ismarvelous.nl/tags/Muffin/"/>
+      <category term="Muffin" scheme="http://codevelo.us/tags/Muffin/"/>
     
-      <category term="Practices" scheme="http://ismarvelous.nl/tags/Practices/"/>
+      <category term="Practices" scheme="http://codevelo.us/tags/Practices/"/>
     
   </entry>
   
   <entry>
     <title>Episerver 7 Exam Preparation</title>
-    <link href="http://ismarvelous.nl/posts/episerver%207%20exam%20preparation/"/>
-    <id>http://ismarvelous.nl/posts/episerver 7 exam preparation/</id>
+    <link href="http://codevelo.us/posts/episerver%207%20exam%20preparation/"/>
+    <id>http://codevelo.us/posts/episerver 7 exam preparation/</id>
     <published>2014-03-04T23:00:00.000Z</published>
     <updated>2016-08-14T11:31:22.564Z</updated>
     
@@ -601,7 +601,7 @@ public virtual ActionResult Success(BasePageData currentPage, XFormPostedData xF
     </summary>
     
     
-      <category term="Episerver" scheme="http://ismarvelous.nl/tags/Episerver/"/>
+      <category term="Episerver" scheme="http://codevelo.us/tags/Episerver/"/>
     
   </entry>
   
